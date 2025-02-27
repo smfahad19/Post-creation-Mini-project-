@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-900 font-sans">
+
+    <!-- Navigation Bar -->
+    <nav class="flex justify-between items-center px-6 py-3 bg-black shadow-md">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 overflow-hidden rounded-full">
+                <img class="w-full h-full object-cover" src="/images/uploads/<%= user.profilepic %>" alt="User Profile Picture">
+            </div>
+            <h1 class="text-xl font-semibold text-white">M-P</h1>
+        </div>
+        <div class="flex gap-3">
+            <a href="/logout" class="text-sm font-medium bg-red-500 px-4 py-2 rounded-lg hover:bg-red-600 transition duration-300">Logout</a>
+            <a class="text-sm text-white font-medium font-bold hover:text-red-500 mt-2" href="/profile">Home</a>    
+        </div>
+        
+    </nav>
+
+    <div class="max-w-xl mx-auto mt-8 p-6 bg-white rounded-xl shadow-lg">
+        <h2 class="text-3xl font-medium text-center text-blue-600 mb-6">Edit Your Post</h2>
+
+        <form action="/edit/<%= post._id %>" method="post" class="space-y-6">
+
+            <div>
+                <textarea name="content" placeholder="Update your post here..." required
+                    class="w-full h-24 bg-gray-200 text-lg p-4 rounded-lg border-2 border-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none transition duration-200"></textarea>
+            </div>
+
+            <div class="flex justify-center">
+                <input type="submit" value="Update Post"
+                    class="bg-blue-600 text-white py-3 px-8 rounded-lg font-semibold text-lg shadow-md hover:bg-blue-700 transition duration-300 cursor-pointer w-full sm:w-auto">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
